@@ -26,28 +26,39 @@ export const Navigation = () => {
 
   const dispatch = useAppDispatch();
 
-  const onSearch = () => dispatch(fetchCharacters({ name, page: 1 }));
+  const onSearch = (e: FormEvent) => {
+    dispatch(fetchCharacters({ name, page: 1 }));
+    e.preventDefault();
+  };
+
+  const onReset = () => {
+    setName('');
+    dispatch(fetchCharacters({ name: '', page: 1 }));
+  };
+
   const onPrevClicked = () => dispatch(fetchPrevPage());
   const onNextClicked = () => dispatch(fetchNextPage());
 
   return (
     <>
       <div className={styles.searchBar}>
-        <input
-          disabled={isLoading}
-          value={name}
-          onChange={(e: FormEvent<HTMLInputElement>) =>
-            setName(e.currentTarget.value)
-          }
-          onKeyDown={(e) => {
-            if (e.code === 'Enter') {
-              onSearch();
+        <form onSubmit={onSearch} onReset={onReset}>
+          <input
+            disabled={isLoading}
+            value={name}
+            onChange={(e: FormEvent<HTMLInputElement>) =>
+              setName(e.currentTarget.value)
             }
-          }}
-        />
-        <button disabled={isLoading} onClick={onSearch}>
-          🔎
-        </button>
+          />
+          {name && (
+            <div className={styles.resetButton}>
+              <button type="reset">✖️</button>
+            </div>
+          )}
+          <button type="submit" disabled={isLoading}>
+            🔎
+          </button>
+        </form>
       </div>
       <div className={styles.navBar}>
         <button disabled={isFirstPage || isLoading} onClick={onPrevClicked}>
