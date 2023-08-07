@@ -1,4 +1,4 @@
-import { useState, FormEvent, KeyboardEventHandler } from 'react';
+import { useState, FormEvent } from 'react';
 import {
   fetchCharacters,
   fetchNextPage,
