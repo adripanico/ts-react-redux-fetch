@@ -1,0 +1,30 @@
+.status {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &.Dead {
+      background-color: rgb(214, 61, 46);
+    }
+
+    &.Alive {
+      background-color: rgb(85, 204, 68);
+    }
+
+    &.unknown {
+      background-color: rgb(158, 158, 158);
+    }
+  }
+
+  span {
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+}

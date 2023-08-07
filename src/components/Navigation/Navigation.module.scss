@@ -1,0 +1,58 @@
+.searchBar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+  input {
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 8px;
+    color: white;
+  }
+
+  button {
+    background-color: transparent;
+    filter: grayscale(1);
+    transition: filter 250ms ease-in-out;
+    overflow: hidden;
+    border-style: none;
+    cursor: pointer;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.navBar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: rgba(white, 0.7);
+    transition: color 250ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+    }
+
+    &[disabled] {
+      color: rgba(white, 0.4);
+      cursor: not-allowed;
+    }
+  }
+}
