@@ -16,13 +16,7 @@ export const Character = ({ character }: ICharacterProps) => {
   return (
     <div className={styles.character}>
       <div className={styles.characterImg}>
-        <img
-          src={image}
-          alt={name}
-          crossOrigin="anonymous"
-          width="180"
-          height="180"
-        />
+        <img src={image} alt={name} crossOrigin="anonymous" />
       </div>
       <div className={styles.characterInfo}>
         <h3>{character.name}</h3>

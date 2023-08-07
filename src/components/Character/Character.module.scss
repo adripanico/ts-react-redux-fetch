@@ -1,4 +1,10 @@
+$small: 40em;
+
 .character {
+  @media only screen and (max-width: $small) {
+    height: 120px;
+  }
+
   width: 500px;
   height: 180px;
   background-color: rgb(68, 68, 80, 0.6);
@@ -41,6 +47,16 @@
   }
 
   .characterImg {
+    @media only screen and (max-width: $small) {
+      min-width: 120px;
+      height: 120px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
     min-width: 180px;
     height: 180px;
     background-repeat: no-repeat;
@@ -50,6 +66,18 @@
   }
 
   .characterInfo {
+    @media only screen and (max-width: $small) {
+      padding: 8px 12px;
+
+      h3 {
+        margin-bottom: 6px;
+      }
+
+      p {
+        margin: 6px 0;
+      }
+    }
+
     padding: 20px;
     color: rgb(200, 200, 200);
     transition: color 250ms ease-in-out;
@@ -61,7 +89,7 @@
     }
 
     h3 {
-      margin-top: 0%;
+      margin-top: 0;
     }
 
     & > * {
