@@ -1,10 +1,11 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { ChevronLeftIcon } from 'shared/icons/ChevronLeftIcon';
 import { SearchIcon } from 'shared/icons/SearchIcon';
 import { TrashIcon } from 'shared/icons/TrashIcon';
 import { fetchCharacters, fetchNextPage, fetchPrevPage } from 'store/characters/characters.actions';
 import {
+  selectCurrentName,
   selectCurrentPage,
   selectIsFirstPage,
   selectIsLastPage,
@@ -23,6 +24,9 @@ export const Navigation = () => {
   const isFirstPage = useAppSelector((state) => selectIsFirstPage(state));
   const isLastPage = useAppSelector((state) => selectIsLastPage(state));
   const isLoading = useAppSelector((state) => selectIsLoading(state));
+  const currentName = useAppSelector((state) => selectCurrentName(state));
+
+  useEffect(() => setName(currentName), [currentName]);
 
   const dispatch = useAppDispatch();
 

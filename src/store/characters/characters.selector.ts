@@ -30,6 +30,11 @@ export const selectCurrentPage: ISelector<ICharactersState['currentPage']> = cre
   (state) => state.currentPage
 );
 
+export const selectCurrentName: ISelector<ICharactersState['currentName']> = createSelector(
+  [charactersStateSelector],
+  (state) => state.currentName
+);
+
 export const selectLastPage: ISelector<ICharactersState['lastPage']> = createSelector(
   [charactersStateSelector],
   (state) => state.lastPage
