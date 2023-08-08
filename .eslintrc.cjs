@@ -1,4 +1,4 @@
-const ALIASES = '^(components|http|models|store)/';
+const ALIASES = '^(app|components|http|models|store)/';
 
 module.exports = {
   root: true,
