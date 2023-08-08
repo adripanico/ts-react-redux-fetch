@@ -1,4 +1,5 @@
-import { ICharacter } from '../../../models/character';
+import { ICharacter } from 'models/character';
+
 import { Status } from './Status/Status';
 
 import styles from './CharacterCard.module.scss';

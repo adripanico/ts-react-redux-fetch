@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
-import { fetchCharacters } from '../../store/characters/characters.actions';
-import { useAppDispatch } from '../../store/store';
-import { Characters } from '../Characters/Characters';
-import { Navigation } from '../Navigation/Navigation';
+import { Characters } from 'components/Characters/Characters';
+import { Navigation } from 'components/Navigation/Navigation';
+import { fetchCharacters } from 'store/characters/characters.actions';
+import { useAppDispatch } from 'store/store';
 
 export const RickAndMorty = () => {
   const dispatch = useAppDispatch();

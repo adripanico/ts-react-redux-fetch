@@ -1,14 +1,14 @@
 import { FormEvent, useState } from 'react';
 
-import { fetchCharacters, fetchNextPage, fetchPrevPage } from '../../store/characters/characters.actions';
+import { fetchCharacters, fetchNextPage, fetchPrevPage } from 'store/characters/characters.actions';
 import {
   selectCurrentPage,
   selectIsFirstPage,
   selectIsLastPage,
   selectIsLoading,
   selectLastPage,
-} from '../../store/characters/characters.selector';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+} from 'store/characters/characters.selector';
+import { useAppDispatch, useAppSelector } from 'store/store';
 
 import styles from './Navigation.module.scss';
 
