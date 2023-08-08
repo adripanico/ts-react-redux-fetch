@@ -3,31 +3,47 @@
   gap: 20px;
   justify-content: center;
 
-  input {
-    border: 1px solid white;
-    background-color: transparent;
-    border-radius: 6px;
-    padding: 8px;
-    color: white;
-  }
+  form {
+    display: flex;
 
-  .resetButton {
-    display: inline-block;
-    width: 0;
-    position: relative;
-    left: -30px;
-  }
+    input {
+      border: 1px solid white;
+      background-color: transparent;
+      border-radius: 6px;
+      padding: 8px 35px 8px 8px;
+      color: white;
+    }
 
-  button {
-    background-color: transparent;
-    filter: grayscale(1);
-    transition: filter 250ms ease-in-out;
-    overflow: hidden;
-    border-style: none;
-    cursor: pointer;
+    button {
+      background-color: transparent;
+      border-style: none;
+      cursor: pointer;
+    }
 
-    &:hover {
-      filter: grayscale(0);
+    .resetButton {
+      display: inline-block;
+      width: 0;
+      position: relative;
+      left: -34px;
+      top: 2px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+      }
+    }
+
+    .submitButton {
+      margin-left: 8px;
+      svg {
+        width: 24px;
+        height: 24px;
+
+        path {
+          stroke: white;
+        }
+      }
     }
   }
 }
@@ -60,6 +76,10 @@
     &[disabled] {
       color: rgba(white, 0.4);
       cursor: not-allowed;
+    }
+
+    &.nextPage {
+      transform: rotate(180deg);
     }
   }
 }

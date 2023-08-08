@@ -26,6 +26,7 @@
       "components/*": ["src/components/*"],
       "http/*": ["src/http/*"],
       "models/*": ["src/models/*"],
+      "shared/*": ["src/shared/*"],
       "store/*": ["src/store/*"]
     }
   },

@@ -14,6 +14,7 @@ export default defineConfig({
       components: path.resolve(__dirname, './src/components'),
       http: path.resolve(__dirname, './src/http'),
       models: path.resolve(__dirname, './src/models'),
+      shared: path.resolve(__dirname, './src/shared'),
       store: path.resolve(__dirname, './src/store'),
     },
   },

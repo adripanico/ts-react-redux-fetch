@@ -1,5 +1,8 @@
 import { FormEvent, useState } from 'react';
 
+import { ChevronLeftIcon } from 'shared/icons/ChevronLeftIcon';
+import { SearchIcon } from 'shared/icons/SearchIcon';
+import { TrashIcon } from 'shared/icons/TrashIcon';
 import { fetchCharacters, fetchNextPage, fetchPrevPage } from 'store/characters/characters.actions';
 import {
   selectCurrentPage,
@@ -47,23 +50,25 @@ export const Navigation = () => {
           />
           {name && (
             <div className={styles.resetButton}>
-              <button type="reset">✖️</button>
+              <button type="reset">
+                <TrashIcon />
+              </button>
             </div>
           )}
-          <button type="submit" disabled={isLoading}>
-            🔎
+          <button type="submit" disabled={isLoading} className={styles.submitButton}>
+            <SearchIcon />
           </button>
         </form>
       </div>
       <div className={styles.navBar}>
         <button disabled={isFirstPage || isLoading} onClick={onPrevClicked}>
-          &lt;
+          <ChevronLeftIcon />
         </button>
         <h3>
           Page {currentPage} out of {lastPage}
         </h3>
-        <button disabled={isLastPage || isLoading} onClick={onNextClicked}>
-          &gt;
+        <button disabled={isLastPage || isLoading} onClick={onNextClicked} className={styles.nextPage}>
+          <ChevronLeftIcon />
         </button>
       </div>
     </>

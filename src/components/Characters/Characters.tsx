@@ -22,7 +22,7 @@ export const Characters = () => {
   }
 
   if (fetchError) {
-    return <NotFound />;
+    return <NotFound hideButton />;
   }
 
   return (
