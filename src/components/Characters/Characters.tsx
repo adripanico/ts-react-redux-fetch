@@ -1,11 +1,8 @@
-import {
-  selectCharacters,
-  selectFetchError,
-  selectIsLoading,
-} from '../../store/characters/characters.selector';
-import { useAppSelector } from '../../store/store';
-import { Character } from '../Character/Character';
-import { NotFound } from '../NotFound/NotFound';
+import { NotFound } from 'components/NotFound/NotFound';
+import { selectCharacters, selectFetchError, selectIsLoading } from 'store/characters/characters.selector';
+import { useAppSelector } from 'store/store';
+
+import { CharacterCard } from './CharacterCard/CharacterCard';
 
 import styles from './Characters.module.scss';
 
@@ -18,7 +15,7 @@ export const Characters = () => {
     return (
       <div className={styles.grid}>
         {[1, 2, 3, 4, 5].map((i) => (
-          <Character key={i} />
+          <CharacterCard key={i} />
         ))}
       </div>
     );
@@ -31,7 +28,7 @@ export const Characters = () => {
   return (
     <div className={styles.grid}>
       {characters.map((character) => (
-        <Character key={character.id} character={character} />
+        <CharacterCard key={character.id} character={character} />
       ))}
     </div>
   );

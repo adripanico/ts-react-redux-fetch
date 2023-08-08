@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { fetchCharacters } from '../../store/characters/characters.actions';
 import { useAppDispatch } from '../../store/store';
 import { Characters } from '../Characters/Characters';
@@ -8,7 +9,7 @@ export const RickAndMorty = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchCharacters());
+    void dispatch(fetchCharacters());
   }, [dispatch]);
 
   return (

@@ -1,9 +1,6 @@
-import { useState, FormEvent } from 'react';
-import {
-  fetchCharacters,
-  fetchNextPage,
-  fetchPrevPage,
-} from '../../store/characters/characters.actions';
+import { FormEvent, useState } from 'react';
+
+import { fetchCharacters, fetchNextPage, fetchPrevPage } from '../../store/characters/characters.actions';
 import {
   selectCurrentPage,
   selectIsFirstPage,
@@ -27,17 +24,17 @@ export const Navigation = () => {
   const dispatch = useAppDispatch();
 
   const onSearch = (e: FormEvent) => {
-    dispatch(fetchCharacters({ name, page: 1 }));
+    void dispatch(fetchCharacters({ name, page: 1 }));
     e.preventDefault();
   };
 
   const onReset = () => {
     setName('');
-    dispatch(fetchCharacters({ name: '', page: 1 }));
+    void dispatch(fetchCharacters({ name: '', page: 1 }));
   };
 
-  const onPrevClicked = () => dispatch(fetchPrevPage());
-  const onNextClicked = () => dispatch(fetchNextPage());
+  const onPrevClicked = () => void dispatch(fetchPrevPage());
+  const onNextClicked = () => void dispatch(fetchNextPage());
 
   return (
     <>
@@ -46,9 +43,7 @@ export const Navigation = () => {
           <input
             disabled={isLoading}
             value={name}
-            onChange={(e: FormEvent<HTMLInputElement>) =>
-              setName(e.currentTarget.value)
-            }
+            onChange={(e: FormEvent<HTMLInputElement>) => setName(e.currentTarget.value)}
           />
           {name && (
             <div className={styles.resetButton}>

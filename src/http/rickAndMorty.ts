@@ -10,14 +10,12 @@ export async function getCharactersByPage({
   const nameQuery = searchName ? `&name=${searchName}` : '';
   const url = `https://rickandmortyapi.com/api/character?page=${page}${nameQuery}`;
 
-  try {
-    const response = await fetch(url);
-    const responseAsJson: ICharactersResponse = await response.json();
-    if (responseAsJson.error) {
-      throw responseAsJson.error;
-    }
-    return responseAsJson;
-  } catch (error) {
-    throw error;
+  const response = await fetch(url);
+  const responseAsJson = (await response.json()) as ICharactersResponse;
+
+  if (responseAsJson.error) {
+    throw responseAsJson.error;
   }
+
+  return responseAsJson;
 }

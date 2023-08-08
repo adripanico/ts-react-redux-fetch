@@ -1,4 +1,5 @@
-import { CharacterStatus } from '../../../models/character';
+import { CharacterStatus } from 'models/character';
+
 import styles from './Status.module.scss';
 
 interface ICharacterStatusProps {

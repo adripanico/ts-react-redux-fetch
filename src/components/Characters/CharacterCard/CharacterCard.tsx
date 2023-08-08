@@ -1,20 +1,20 @@
-import { ICharacter } from '../../models/character';
-import { Status } from '../Character/Status/Status';
+import { ICharacter } from '../../../models/character';
+import { Status } from './Status/Status';
 
-import styles from './Character.module.scss';
+import styles from './CharacterCard.module.scss';
 
 interface ICharacterProps {
   character?: ICharacter;
 }
 
-export const Character = ({ character }: ICharacterProps) => {
+export const CharacterCard = ({ character }: ICharacterProps) => {
   if (!character) {
-    return <div className={`${styles.character} ${styles.loading}`}></div>;
+    return <div className={`${styles.characterCard} ${styles.loading}`}></div>;
   }
 
   const { image, name } = character;
   return (
-    <div className={styles.character}>
+    <div className={styles.characterCard}>
       <div className={styles.characterImg}>
         <img src={image} alt={name} crossOrigin="anonymous" />
       </div>
