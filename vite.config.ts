@@ -2,9 +2,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 
+import { APP_CONSTANTS } from './src/constants';
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/ts-react-redux-fetch/',
+  base: `/${APP_CONSTANTS.baseUrl}/`,
   plugins: [react()],
   resolve: {
     alias: {
