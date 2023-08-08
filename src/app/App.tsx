@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
-import { RickAndMorty } from 'components/RickAndMorty/RickAndMorty';
+import { CharactersView } from 'components/CharactersView/CharactersView';
 import store from 'store/store';
 
 import { APP_CONSTANTS } from '../constants';
@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Outlet />}>
             <Route path="/" element={<Navigate to="/characters" />} />
-            <Route path="/characters" element={<RickAndMorty />} />
+            <Route path="/characters" element={<CharactersView />} />
           </Route>
         </Routes>
       </BrowserRouter>

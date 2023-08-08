@@ -5,7 +5,7 @@ import { Navigation } from 'components/Navigation/Navigation';
 import { fetchCharacters } from 'store/characters/characters.actions';
 import { useAppDispatch } from 'store/store';
 
-export const RickAndMorty = () => {
+export const CharactersView = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
