@@ -1,45 +1,51 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { RootState } from '../store';
+import { ISelector, RootState } from '../store';
 import { ICharactersState } from './characters.reducer';
 
 export const charactersStateSelector = (state: RootState) => state.characters;
 
-type ICharactersStateSelector<T> = (_state: RootState) => T;
-
-export const selectCharacters: ICharactersStateSelector<ICharactersState['characters']> = createSelector(
+export const selectCharacters: ISelector<ICharactersState['characters']> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => {
+  (state) => {
     return state.characters;
   }
 );
 
-export const selectIsLoading: ICharactersStateSelector<ICharactersState['isLoading']> = createSelector(
+export const selectCharacter: ISelector<ICharactersState['characters'][number] | undefined, [id?: string]> =
+  createSelector([charactersStateSelector, (_, id?: string) => id], (state, id) => {
+    if (!id) {
+      return undefined;
+    }
+    return state.characters.find((character) => character.id === Number(id));
+  });
+
+export const selectIsLoading: ISelector<ICharactersState['isLoading']> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => state.isLoading
+  (state) => state.isLoading
 );
 
-export const selectCurrentPage: ICharactersStateSelector<ICharactersState['currentPage']> = createSelector(
+export const selectCurrentPage: ISelector<ICharactersState['currentPage']> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => state.currentPage
+  (state) => state.currentPage
 );
 
-export const selectLastPage: ICharactersStateSelector<ICharactersState['lastPage']> = createSelector(
+export const selectLastPage: ISelector<ICharactersState['lastPage']> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => state.lastPage
+  (state) => state.lastPage
 );
 
-export const selectIsFirstPage: ICharactersStateSelector<boolean> = createSelector(
+export const selectIsFirstPage: ISelector<boolean> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => state.currentPage === 1
+  (state) => state.currentPage === 1
 );
 
-export const selectIsLastPage: ICharactersStateSelector<boolean> = createSelector(
+export const selectIsLastPage: ISelector<boolean> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => state.currentPage === state.lastPage
+  (state) => state.currentPage === state.lastPage
 );
 
-export const selectFetchError: ICharactersStateSelector<ICharactersState['fetchError']> = createSelector(
+export const selectFetchError: ISelector<ICharactersState['fetchError']> = createSelector(
   [charactersStateSelector],
-  (state: ICharactersState) => state.fetchError
+  (state) => state.fetchError
 );
