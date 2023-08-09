@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
 import { ICharacter } from 'models/character';
-
-import { Status } from './Status/Status';
+import { CharacterImg } from 'shared/CharacterImg/CharacterImg';
+import { DetailParagraph } from 'shared/DetailParagraph/DetailParagraph';
+import { Status } from 'shared/Status/Status';
 
 import styles from './CharacterCard.module.scss';
 
@@ -21,17 +22,13 @@ export const CharacterCard = ({ character }: ICharacterProps) => {
   return (
     <div className={styles.characterCard} onClick={() => navigate(`/characters/${character.id}`)}>
       <div className={styles.characterImg}>
-        <img src={image} alt={name} crossOrigin="anonymous" />
+        <CharacterImg src={image} alt={name} />
       </div>
       <div className={styles.characterInfo}>
         <h3>{character.name}</h3>
         <Status status={character.status} />
-        <p>
-          Origin: <strong>{character.origin.name}</strong>
-        </p>
-        <p>
-          Location: <strong>{character.location.name}</strong>
-        </p>
+        <DetailParagraph label="Origin" value={character.origin.name} />
+        <DetailParagraph label="Location" value={character.location.name} />
       </div>
     </div>
   );

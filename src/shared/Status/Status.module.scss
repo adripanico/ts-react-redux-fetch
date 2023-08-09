@@ -1,0 +1,20 @@
+.status {
+  &.Dead {
+    background-color: rgb(214, 61, 46);
+  }
+
+  &.Alive {
+    background-color: rgb(85, 204, 68);
+  }
+
+  &.unknown {
+    background-color: rgb(158, 158, 158);
+  }
+
+  color: black;
+  border-radius: 4px;
+  padding: 2px 4px;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
