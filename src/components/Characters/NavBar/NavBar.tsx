@@ -20,8 +20,15 @@ export const NavBar = () => {
 
   const dispatch = useAppDispatch();
 
-  const onPrevClicked = () => void dispatch(fetchPrevPage());
-  const onNextClicked = () => void dispatch(fetchNextPage());
+  const onPrevClicked = () => {
+    scroll(0, 0);
+    void dispatch(fetchPrevPage());
+  };
+
+  const onNextClicked = () => {
+    scroll(0, 0);
+    void dispatch(fetchNextPage());
+  };
 
   return (
     <div className={styles.navBar}>
