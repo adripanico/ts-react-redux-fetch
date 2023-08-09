@@ -10,9 +10,9 @@ import { Status } from 'shared/Status/Status';
 import { selectCharacter } from 'store/characters/characters.selector';
 import { useAppSelector } from 'store/store';
 
-import styles from './CharacterDetailsView.module.scss';
+import styles from './CharacterDetails.module.scss';
 
-export const CharacterDetailsView = () => {
+const CharacterDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -76,3 +76,5 @@ export const CharacterDetailsView = () => {
     </div>
   );
 };
+
+export default CharacterDetails;

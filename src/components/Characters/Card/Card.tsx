@@ -5,13 +5,13 @@ import { CharacterImg } from 'shared/CharacterImg/CharacterImg';
 import { DetailParagraph } from 'shared/DetailParagraph/DetailParagraph';
 import { Status } from 'shared/Status/Status';
 
-import styles from './CharacterCard.module.scss';
+import styles from './Card.module.scss';
 
-interface ICharacterProps {
+interface ICardProps {
   character?: ICharacter;
 }
 
-export const CharacterCard = ({ character }: ICharacterProps) => {
+export const Card = ({ character }: ICardProps) => {
   const navigate = useNavigate();
 
   if (!character) {
