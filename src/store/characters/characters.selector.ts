@@ -12,6 +12,11 @@ export const selectCharacters: ISelector<ICharactersState['characters']> = creat
   }
 );
 
+export const selectAreCharactersLoaded: ISelector<boolean> = createSelector(
+  [charactersStateSelector],
+  (state) => !state.isLoading && state.characters?.length > 0
+);
+
 export const selectCharacter: ISelector<ICharactersState['characters'][number] | undefined, [id?: string]> =
   createSelector([charactersStateSelector, (_, id?: string) => id], (state, id) => {
     if (!id) {

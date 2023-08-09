@@ -1,11 +1,19 @@
+import { selectAreCharactersLoaded } from 'store/characters/characters.selector';
+import { useAppSelector } from 'store/store';
+
 import { Grid } from './Grid/Grid';
-import { Navigation } from './Navigation/Navigation';
+import { NavBar } from './NavBar/NavBar';
+import { SearchBar } from './SearchBar/SearchBar';
 
 const Characters = () => {
+  const areCharactersLoaded = useAppSelector((state) => selectAreCharactersLoaded(state));
+
   return (
     <>
-      <Navigation />
+      <SearchBar />
+      <NavBar />
       <Grid />
+      {areCharactersLoaded && <NavBar />}
     </>
   );
 };
