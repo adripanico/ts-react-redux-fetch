@@ -1,5 +1,3 @@
-@import 'styles/variables.scss';
-
 .notFound {
   display: flex;
   flex-direction: column;
@@ -14,18 +12,18 @@
   button {
     margin: 1rem 0;
     font-size: 1.125rem;
-    background-color: $button-bg-color;
+    background-color: var(--button-bg-color);
     border: 0;
     padding: 0.5rem 0.625rem;
     border-radius: 4px;
-    color: $text-color-02;
+    color: var(--text-color-02);
     font-weight: 800;
     cursor: pointer;
     transition: all 250ms ease-in-out;
 
     &:hover {
-      color: $text-color-01;
-      background-color: $button-bg-color-hovered;
+      color: var(--text-color-01);
+      background-color: var(--button-bg-color-hovered);
     }
   }
 

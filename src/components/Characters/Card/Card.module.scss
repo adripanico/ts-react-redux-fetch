@@ -1,4 +1,4 @@
-@import 'styles/variables.scss';
+$small-screen: 40rem;
 
 .characterCard {
   @media only screen and (max-width: $small-screen) {
@@ -8,7 +8,7 @@
   cursor: pointer;
   width: 500px;
   height: 180px;
-  background-color: $card-bg-color;
+  background-color: var(--card-bg-color);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -33,11 +33,11 @@
       width: 45%;
       background-image: linear-gradient(
         to left,
-        rgba($card-bg-color, 0.05),
-        rgba($card-bg-color, 0.3),
-        rgba($card-bg-color, 0.6),
-        rgba($card-bg-color, 0.3),
-        rgba($card-bg-color, 0.05)
+        rgba(var(--card-bg-color, 0.05)),
+        rgba(var(--card-bg-color, 0.3)),
+        rgba(var(--card-bg-color, 0.6)),
+        rgba(var(--card-bg-color, 0.3)),
+        rgba(var(--card-bg-color, 0.05))
       );
       animation: loading 1.5s infinite;
       z-index: 45;
@@ -83,13 +83,13 @@
     }
 
     padding: 1.25rem;
-    color: $text-color-02;
+    color: var(--text-color-02);
     transition: color 250ms ease-in-out;
     width: 100%;
     overflow: hidden;
 
     &:hover {
-      color: $text-color-01;
+      color: var(--text-color-01);
     }
 
     h3 {

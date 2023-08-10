@@ -1,19 +1,17 @@
-@import 'styles/variables.scss';
-
 .status {
   &.Dead {
-    background-color: $status-dead-bg-color;
+    background-color: var(--status-dead-bg-color);
   }
 
   &.Alive {
-    background-color: $status-alive-bg-color;
+    background-color: var(--status-alive-bg-color);
   }
 
   &.unknown {
-    background-color: $status-unknown-bg-color;
+    background-color: var(--status-unknown-bg-color);
   }
 
-  color: $status-text-color;
+  color: var(--status-text-color);
   border-radius: 4px;
   padding: 0.125rem 0.25rem;
   text-transform: capitalize;

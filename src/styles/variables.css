@@ -1,0 +1,49 @@
+.dark-theme {
+  --input-border-color: #fff;
+  --icon-color: #fff;
+
+  --text-color-01: #fff;
+  --text-color-02: #aaa;
+  --text-color-03: #666;
+
+  --bg-color: rgb(39, 43, 51);
+
+  --card-bg-color: rgb(68, 68, 80, 0.6);
+
+  --status-text-color: #000;
+  --status-alive-bg-color: rgb(85, 204, 68);
+  --status-dead-bg-color: rgb(214, 61, 46);
+  --status-unknown-bg-color: rgb(158, 158, 158);
+
+  --button-bg-color: rgb(70, 70, 80);
+  --button-bg-color-hovered: rgb(68, 68, 80);
+
+  --scrollbar-track: rgb(27, 30, 36);
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+}
+
+.light-theme {
+  --input-border-color: #fff;
+  --icon-color: #fff;
+
+  --text-color-01: #fff;
+  --text-color-02: #aaa;
+  --text-color-03: #666;
+
+  --bg-color: rgb(255, 255, 255);
+
+  --card-bg-color: rgb(68, 68, 80, 0.6);
+
+  --status-text-color: #000;
+  --status-alive-bg-color: rgb(85, 204, 68);
+  --status-dead-bg-color: rgb(214, 61, 46);
+  --status-unknown-bg-color: rgb(158, 158, 158);
+
+  --button-bg-color: rgb(70, 70, 80);
+  --button-bg-color-hovered: rgb(68, 68, 80);
+
+  --scrollbar-track: rgb(27, 30, 36);
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+}

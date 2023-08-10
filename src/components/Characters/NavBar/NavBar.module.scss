@@ -1,5 +1,3 @@
-@import 'styles/variables.scss';
-
 .navBar {
   display: flex;
   gap: 20px;
@@ -21,16 +19,16 @@
     margin: 0;
     border: 0;
     background: transparent;
-    color: $text-color-02;
+    color: var(--text-color-02);
     transition: color 250ms ease-in-out;
     cursor: pointer;
 
     &:hover {
-      color: $text-color-01;
+      color: var(--text-color-01);
     }
 
     &[disabled] {
-      color: $text-color-03;
+      color: var(--text-color-03);
       cursor: not-allowed;
     }
 
