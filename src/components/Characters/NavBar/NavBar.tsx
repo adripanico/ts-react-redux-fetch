@@ -1,6 +1,7 @@
 import { ChevronLeftIcon } from 'shared/icons/ChevronLeftIcon';
 import { fetchNextPage, fetchPrevPage } from 'store/characters/characters.actions';
 import {
+  selectAreCharactersLoaded,
   selectCurrentPage,
   selectIsFirstPage,
   selectIsLastPage,
@@ -11,12 +12,17 @@ import { useAppDispatch, useAppSelector } from 'store/store';
 
 import styles from './NavBar.module.scss';
 
-export const NavBar = () => {
+interface INavBarProps {
+  displayOnlyWithCharacters?: boolean;
+}
+
+export const NavBar = ({ displayOnlyWithCharacters = false }: INavBarProps) => {
   const isLoading = useAppSelector((state) => selectIsLoading(state));
   const currentPage = useAppSelector((state) => selectCurrentPage(state));
   const lastPage = useAppSelector((state) => selectLastPage(state));
   const isFirstPage = useAppSelector((state) => selectIsFirstPage(state));
   const isLastPage = useAppSelector((state) => selectIsLastPage(state));
+  const areCharactersLoaded = useAppSelector((state) => selectAreCharactersLoaded(state));
 
   const dispatch = useAppDispatch();
 
@@ -31,7 +37,7 @@ export const NavBar = () => {
   };
 
   return (
-    <div className={styles.navBar}>
+    <nav className={`${styles.navBar} ${displayOnlyWithCharacters && !areCharactersLoaded ? styles.hide : ''}`}>
       <button disabled={isFirstPage || isLoading} onClick={onPrevClicked}>
         <ChevronLeftIcon />
       </button>
@@ -41,6 +47,6 @@ export const NavBar = () => {
       <button disabled={isLastPage || isLoading} onClick={onNextClicked} className={styles.nextPage}>
         <ChevronLeftIcon />
       </button>
-    </div>
+    </nav>
   );
 };

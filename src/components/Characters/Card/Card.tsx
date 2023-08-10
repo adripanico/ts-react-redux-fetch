@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import { getCharacterDetailsPath } from 'app/routes';
 import { ICharacter } from 'models/character';
 import { CharacterImg } from 'shared/CharacterImg/CharacterImg';
 import { DetailParagraph } from 'shared/DetailParagraph/DetailParagraph';
@@ -20,7 +21,7 @@ export const Card = ({ character }: ICardProps) => {
 
   const { image, name } = character;
   return (
-    <div className={styles.characterCard} onClick={() => navigate(`/characters/${character.id}`)}>
+    <article className={styles.characterCard} onClick={() => navigate(getCharacterDetailsPath(character.id))}>
       <div className={styles.characterImg}>
         <CharacterImg src={image} alt={name} />
       </div>
@@ -30,6 +31,6 @@ export const Card = ({ character }: ICardProps) => {
         <DetailParagraph label="Origin" value={character.origin.name} />
         <DetailParagraph label="Location" value={character.location.name} />
       </div>
-    </div>
+    </article>
   );
 };

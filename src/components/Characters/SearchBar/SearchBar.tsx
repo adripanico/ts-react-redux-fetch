@@ -29,24 +29,26 @@ export const SearchBar = () => {
   };
 
   return (
-    <div className={styles.searchBar}>
+    <nav className={styles.searchBar}>
       <form onSubmit={onSearch} onReset={onReset}>
-        <input
-          disabled={isLoading}
-          value={name}
-          onChange={(e: FormEvent<HTMLInputElement>) => setName(e.currentTarget.value)}
-        />
-        {name && (
-          <div className={styles.resetButton}>
-            <button type="reset">
-              <TrashIcon />
-            </button>
-          </div>
-        )}
+        <div className={styles.inputAndResetWrapper}>
+          <input
+            disabled={isLoading}
+            value={name}
+            onChange={(e: FormEvent<HTMLInputElement>) => setName(e.currentTarget.value)}
+          />
+          {name && (
+            <div className={styles.resetButton}>
+              <button type="reset">
+                <TrashIcon />
+              </button>
+            </div>
+          )}
+        </div>
         <button type="submit" disabled={isLoading} className={styles.submitButton}>
           <SearchIcon />
         </button>
       </form>
-    </div>
+    </nav>
   );
 };

@@ -6,6 +6,10 @@
   justify-content: center;
   align-items: center;
 
+  &.hide {
+    display: none;
+  }
+
   button {
     width: 24px;
     height: 24px;

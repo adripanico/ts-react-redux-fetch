@@ -37,10 +37,10 @@ export const Grid = () => {
   }
 
   return (
-    <div className={styles.grid}>
+    <section className={styles.grid}>
       {characters.map((character) => (
         <Card key={character.id} character={character} />
       ))}
-    </div>
+    </section>
   );
 };
