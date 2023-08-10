@@ -1,3 +1,5 @@
+@import 'styles/variables.scss';
+
 .searchBar {
   display: flex;
   gap: 20px;
@@ -6,42 +8,48 @@
   form {
     display: flex;
 
+    .inputAndResetWrapper {
+      display: flex;
+      align-items: center;
+    }
+
     input {
-      border: 1px solid white;
+      border: 1px solid $input-border-color;
       background-color: transparent;
       border-radius: 6px;
-      padding: 8px 35px 8px 8px;
-      color: white;
+      padding: 0.5rem calc($form-button-size + 2px) 0.5rem 0.5rem;
+      color: $text-color-01;
     }
 
     button {
+      padding: 0;
       background-color: transparent;
       border-style: none;
       cursor: pointer;
     }
 
     .resetButton {
-      display: inline-block;
       width: 0;
+      height: 0;
       position: relative;
-      left: -34px;
-      top: 2px;
+      left: calc(-1 * ($form-button-size + 2px));
+      top: calc(-1 * ($form-button-size + 2px) / 2);
 
       svg {
-        width: 24px;
-        height: 24px;
-        fill: white;
+        width: $form-button-size;
+        height: $form-button-size;
+        fill: $icon-color;
       }
     }
 
     .submitButton {
-      margin-left: 8px;
+      margin-left: 0.5rem;
       svg {
-        width: 24px;
-        height: 24px;
+        width: $form-button-size;
+        height: $form-button-size;
 
         path {
-          stroke: white;
+          stroke: $icon-color;
         }
       }
     }

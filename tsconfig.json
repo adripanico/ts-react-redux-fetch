@@ -27,7 +27,8 @@
       "http/*": ["src/http/*"],
       "models/*": ["src/models/*"],
       "shared/*": ["src/shared/*"],
-      "store/*": ["src/store/*"]
+      "store/*": ["src/store/*"],
+      "styles/*": ["src/styles/*"]
     }
   },
   "include": ["src", ".eslintrc.cjs"],

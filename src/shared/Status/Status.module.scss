@@ -1,19 +1,21 @@
+@import 'styles/variables.scss';
+
 .status {
   &.Dead {
-    background-color: rgb(214, 61, 46);
+    background-color: $status-dead-bg-color;
   }
 
   &.Alive {
-    background-color: rgb(85, 204, 68);
+    background-color: $status-alive-bg-color;
   }
 
   &.unknown {
-    background-color: rgb(158, 158, 158);
+    background-color: $status-unknown-bg-color;
   }
 
-  color: black;
+  color: $status-text-color;
   border-radius: 4px;
-  padding: 2px 4px;
+  padding: 0.125rem 0.25rem;
   text-transform: capitalize;
   overflow: hidden;
   text-overflow: ellipsis;
