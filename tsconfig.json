@@ -24,6 +24,7 @@
     "paths": {
       "app/*": ["src/app/*"],
       "components/*": ["src/components/*"],
+      "context/*": ["src/context/*"],
       "http/*": ["src/http/*"],
       "models/*": ["src/models/*"],
       "shared/*": ["src/shared/*"],

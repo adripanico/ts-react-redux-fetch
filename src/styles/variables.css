@@ -24,14 +24,14 @@
 }
 
 .light-theme {
-  --input-border-color: #fff;
-  --icon-color: #fff;
+  --input-border-color: #000;
+  --icon-color: #000;
 
-  --text-color-01: #fff;
-  --text-color-02: #aaa;
-  --text-color-03: #666;
+  --text-color-01: #000;
+  --text-color-02: #444;
+  --text-color-03: #222;
 
-  --bg-color: rgb(255, 255, 255);
+  --bg-color: #cecece;
 
   --card-bg-color: rgb(68, 68, 80, 0.6);
 

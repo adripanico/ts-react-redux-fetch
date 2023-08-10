@@ -11,6 +11,7 @@ export default defineConfig({
     alias: {
       app: path.resolve(__dirname, './src/app'),
       components: path.resolve(__dirname, './src/components'),
+      context: path.resolve(__dirname, './src/context'),
       http: path.resolve(__dirname, './src/http'),
       models: path.resolve(__dirname, './src/models'),
       shared: path.resolve(__dirname, './src/shared'),
