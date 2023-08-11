@@ -25,11 +25,13 @@
       "app/*": ["src/app/*"],
       "components/*": ["src/components/*"],
       "context/*": ["src/context/*"],
+      "hooks/*": ["src/hooks/*"],
       "http/*": ["src/http/*"],
       "models/*": ["src/models/*"],
       "shared/*": ["src/shared/*"],
       "store/*": ["src/store/*"],
-      "styles/*": ["src/styles/*"]
+      "styles/*": ["src/styles/*"],
+      "utils/*": ["src/utils/*"]
     }
   },
   "include": ["src", ".eslintrc.cjs"],

@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-export const ChevronLeftIcon = (props: SVGProps<SVGSVGElement>) => {
+export const CloseIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       {...props}
@@ -12,7 +12,7 @@ export const ChevronLeftIcon = (props: SVGProps<SVGSVGElement>) => {
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M13.939 4.939 6.879 12l7.06 7.061 2.122-2.122L11.121 12l4.94-4.939z"></path>
+      <path fill="none" strokeWidth="2" d="M3,3 L21,21 M3,21 L21,3"></path>
     </svg>
   );
 };

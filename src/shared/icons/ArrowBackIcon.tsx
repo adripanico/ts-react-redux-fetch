@@ -1,6 +1,9 @@
-export const ArrowBackIcon = () => {
+import { SVGProps } from 'react';
+
+export const ArrowBackIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
+      {...props}
       stroke="currentColor"
       fill="currentColor"
       strokeWidth="0"

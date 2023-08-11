@@ -21,6 +21,9 @@
   --scrollbar-track: rgb(27, 30, 36);
   --scrollbar-thumb: #888;
   --scrollbar-thumb-hover: #555;
+
+  --sidebar-bg-color: rgb(27, 30, 36);
+  --sidebar-box-shadow: rgba(255, 255, 255, 0.1) 0px 5px 40px 0px;
 }
 
 .light-theme {
@@ -46,4 +49,7 @@
   --scrollbar-track: rgb(27, 30, 36);
   --scrollbar-thumb: #888;
   --scrollbar-thumb-hover: #555;
+
+  --sidebar-bg-color: #eee;
+  --sidebar-box-shadow: #000 0px 5px 40px 0px;
 }

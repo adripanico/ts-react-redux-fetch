@@ -1,14 +1,13 @@
-import { ThemeSwitcher } from 'shared/ThemeSwitcher/ThemeSwitcher';
-
-import logo from './logo.png';
+import { Sidebar } from 'components/Sidebar/Sidebar';
+import { Logo } from 'shared/Logo/Logo';
 
 import styles from './Header.module.scss';
 
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <img src={logo} height={56} alt="Rick and Morty logo" />
-      <ThemeSwitcher />
+      <Sidebar />
+      <Logo />
     </header>
   );
 };

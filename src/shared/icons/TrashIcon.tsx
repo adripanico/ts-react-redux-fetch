@@ -1,6 +1,9 @@
-export const TrashIcon = () => {
+import { SVGProps } from 'react';
+
+export const TrashIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
+      {...props}
       stroke="currentColor"
       fill="currentColor"
       strokeWidth="0"
