@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 import { ROUTES } from 'app/routes';
@@ -13,6 +14,7 @@ import { Episodes } from './Episodes/Episodes';
 import styles from './CharacterDetails.module.scss';
 
 const CharacterDetails = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -36,18 +38,18 @@ const CharacterDetails = () => {
           <div className={styles.card}>
             <div className={styles.header}>
               <h2>{character.name}</h2>
-              <Status status={character.status} className={styles.status} />
+              <Status status={character.status} gender={character.gender} className={styles.status} />
               <div className={styles.img}>
                 <CharacterImg alt={character.name} src={character.image} />
               </div>
             </div>
-            <DetailParagraph label="Gender" value={character.gender} />
+            <DetailParagraph label={t('gender')} value={t(character.gender)} />
             <DetailParagraph
-              label="Species"
-              value={`${character.species}${character.type ? ` (${character.type})` : ''}`}
+              label={t('species')}
+              value={`${t(character.species)}${character.type ? ` (${character.type})` : ''}`}
             />
-            <DetailParagraph label="Origin" value={character.origin.name} />
-            <DetailParagraph label="Location" value={character.location.name} />
+            <DetailParagraph label={t('origin')} value={t(character.origin.name)} />
+            <DetailParagraph label={t('location')} value={t(character.location.name)} />
             <Episodes episodeUrls={character.episode} />
           </div>
         </div>

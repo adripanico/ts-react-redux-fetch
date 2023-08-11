@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { getCharacterDetailsPath } from 'app/routes';
@@ -14,6 +15,7 @@ interface ICardProps {
 
 export const Card = ({ character }: ICardProps) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   if (!character) {
     return <div className={`${styles.characterCard} ${styles.loading}`}></div>;
@@ -27,9 +29,9 @@ export const Card = ({ character }: ICardProps) => {
       </div>
       <div className={styles.characterInfo}>
         <h3>{character.name}</h3>
-        <Status status={character.status} />
-        <DetailParagraph label="Origin" value={character.origin.name} />
-        <DetailParagraph label="Location" value={character.location.name} />
+        <Status status={character.status} gender={character.gender} />
+        <DetailParagraph label={t('origin')} value={t(character.origin.name)} />
+        <DetailParagraph label={t('location')} value={t(character.location.name)} />
       </div>
     </article>
   );

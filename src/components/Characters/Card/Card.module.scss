@@ -96,6 +96,10 @@ $small-screen: 40rem;
       margin-top: 0;
     }
 
+    & > p {
+      height: 21px;
+    }
+
     & > * {
       overflow: hidden;
       text-overflow: ellipsis;

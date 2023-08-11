@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { ROUTES } from 'app/routes';
@@ -9,13 +10,14 @@ interface INotFoundProps {
 }
 
 const NotFound = ({ hideButton }: INotFoundProps) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
     <div className={styles.notFound}>
-      <h1>WOOPS!</h1>
-      <h2>Something went riggity riggity wrecked!</h2>
-      {!hideButton && <button onClick={() => navigate(ROUTES.CHARACTERS)}>WAY BACK HOME</button>}
+      <h1>{t('notFoundTitle')}</h1>
+      <h2>{t('notFoundText')}</h2>
+      {!hideButton && <button onClick={() => navigate(ROUTES.CHARACTERS)}>{t('backToHome')}</button>}
       <div className={styles.img}></div>
     </div>
   );

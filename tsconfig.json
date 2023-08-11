@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
 
     "moduleResolution": "node", // originally "blunder". Modified to "node" to get rid of several IDE errors
     "allowImportingTsExtensions": true,
@@ -27,6 +28,7 @@
       "context/*": ["src/context/*"],
       "hooks/*": ["src/hooks/*"],
       "http/*": ["src/http/*"],
+      "i18n/*": ["src/i18n/*"],
       "models/*": ["src/models/*"],
       "shared/*": ["src/shared/*"],
       "store/*": ["src/store/*"],

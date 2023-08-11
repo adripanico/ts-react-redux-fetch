@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useActionOnClickOutside } from 'hooks/useActionOnClickOutside';
 import { CloseIcon } from 'shared/icons/CloseIcon';
@@ -9,6 +10,7 @@ import { ThemeSwitcher } from 'shared/ThemeSwitcher/ThemeSwitcher';
 import styles from './Sidebar.module.scss';
 
 export const Sidebar = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -28,11 +30,11 @@ export const Sidebar = () => {
         </div>
         <div className={styles.content}>
           <div className={styles.row}>
-            <div>Theme</div>
+            <div>{t('theme')}</div>
             <ThemeSwitcher />
           </div>
           <div className={styles.row}>
-            <div>Language</div>
+            <div>{t('theme')}</div>
             <div>
               <em>(coming soon)</em>
             </div>

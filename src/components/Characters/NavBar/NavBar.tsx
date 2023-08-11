@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { ChevronLeftIcon } from 'shared/icons/ChevronLeftIcon';
 import { fetchNextPage, fetchPrevPage } from 'store/characters/characters.actions';
 import {
@@ -17,6 +19,7 @@ interface INavBarProps {
 }
 
 export const NavBar = ({ displayOnlyWithCharacters = false }: INavBarProps) => {
+  const { t } = useTranslation();
   const isLoading = useAppSelector((state) => selectIsLoading(state));
   const currentPage = useAppSelector((state) => selectCurrentPage(state));
   const lastPage = useAppSelector((state) => selectLastPage(state));
@@ -41,9 +44,7 @@ export const NavBar = ({ displayOnlyWithCharacters = false }: INavBarProps) => {
       <button disabled={isFirstPage || isLoading} onClick={onPrevClicked}>
         <ChevronLeftIcon />
       </button>
-      <h3>
-        Page {currentPage} out of {lastPage}
-      </h3>
+      <h3>{t('pagination', { currentPage, lastPage })}</h3>
       <button disabled={isLastPage || isLoading} onClick={onNextClicked} className={styles.nextPage}>
         <ChevronLeftIcon />
       </button>

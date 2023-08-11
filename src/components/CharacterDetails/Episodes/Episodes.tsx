@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getEpisode } from 'http/rickAndMorty';
 import { IEpisode } from 'models/episode';
@@ -8,6 +9,7 @@ interface IEpisodesProps {
 }
 
 export const Episodes = ({ episodeUrls }: IEpisodesProps) => {
+  const { t } = useTranslation();
   const [episodes, setEpisodes] = useState<IEpisode[]>();
 
   const getAllCharacterEpisodes = useCallback(async () => {
@@ -30,9 +32,7 @@ export const Episodes = ({ episodeUrls }: IEpisodesProps) => {
 
   return (
     <div>
-      <p>
-        Seen in {episodes.length} episode{episodes.length > 1 ? 's' : ''}:
-      </p>
+      <p>{t('seenInEpisode', { count: episodes.length })}</p>
       <ul>
         {episodes.map((episode) => (
           <li key={episode.id}>

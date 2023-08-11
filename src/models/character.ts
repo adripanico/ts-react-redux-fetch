@@ -4,7 +4,7 @@ export interface ICharacter {
   status: CharacterStatus;
   species: string;
   type: string;
-  gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
+  gender: CharacterGender;
   origin: ILocation;
   location: ILocation;
   image: string;
@@ -19,3 +19,17 @@ interface ILocation {
 }
 
 export type CharacterStatus = 'Alive' | 'Dead' | 'unknown';
+
+export type CharacterSpecies =
+  | 'Human'
+  | 'Alien'
+  | 'Humanoid'
+  | 'unknown'
+  | 'Poopybutthole'
+  | 'Mythological Creature'
+  | 'Animal'
+  | 'Robot'
+  | 'Cronenberg'
+  | 'Disease';
+
+export type CharacterGender = 'Female' | 'Male' | 'Genderless' | 'unknown';
