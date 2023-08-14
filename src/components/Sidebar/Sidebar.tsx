@@ -5,7 +5,9 @@ import { useActionOnClickOutside } from 'hooks/useActionOnClickOutside';
 import { CloseIcon } from 'shared/icons/CloseIcon';
 import { MenuIcon } from 'shared/icons/MenuIcon';
 import { Logo } from 'shared/Logo/Logo';
-import { ThemeSwitcher } from 'shared/ThemeSwitcher/ThemeSwitcher';
+
+import { LanguageSelector } from './LanguageSelector/LanguageSelector';
+import { ThemeSelector } from './ThemeSelector/ThemeSelector';
 
 import styles from './Sidebar.module.scss';
 
@@ -14,13 +16,13 @@ export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuIconRef = useRef<HTMLDivElement>(null);
 
-  useActionOnClickOutside([sidebarRef, menuRef], () => setIsOpen(false));
+  useActionOnClickOutside([sidebarRef, menuIconRef], () => setIsOpen(false));
 
   return (
     <>
-      <div ref={menuRef}>
+      <div ref={menuIconRef}>
         <MenuIcon className={styles.sidebarToggle} onClick={() => setIsOpen(true)} />
       </div>
       <div className={`${styles.sidebar} ${isOpen ? styles.show : ''}`} ref={sidebarRef}>
@@ -31,13 +33,11 @@ export const Sidebar = () => {
         <div className={styles.content}>
           <div className={styles.row}>
             <div>{t('theme')}</div>
-            <ThemeSwitcher />
+            <ThemeSelector />
           </div>
           <div className={styles.row}>
-            <div>{t('theme')}</div>
-            <div>
-              <em>(coming soon)</em>
-            </div>
+            <div>{t('language')}</div>
+            <LanguageSelector />
           </div>
         </div>
         <div className={styles.footer}>
